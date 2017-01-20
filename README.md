@@ -54,8 +54,8 @@ Emits provided event and data once to each socket that is in this domain but not
 #### emitToDifference([string] ids, string eventName, object data)
 Emits provided event and data once to each socket that is in this domain but whose id is not in ids
 
-#### emitToUnion([string] ids, string eventName, object data)
-Emits provided event and data once to each unique socket that is in this domain and otherDomain.
+#### emitToUnion(Domain otherDomain, string eventName, object data)
+Emits provided event and data once to socket(s) with **unique** ids across this domain and otherDomain.
 
 ## Working with multiple modules
 Working with Socket.io in an application with several modules can painful.
