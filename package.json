@@ -1,0 +1,25 @@
+{
+  "name": "domain.io",
+  "version": "1.0.0",
+  "description": "Zero-dependency library to manage socket.io connections easily",
+  "main": "domain.io.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neeilan/domain.io.git"
+  },
+  "keywords": [
+    "socket.io",
+    "websockets",
+    "ws",
+    "engine.io"
+  ],
+  "author": "Neeilan Selvalingam <neeilans@live.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neeilan/domain.io/issues"
+  },
+  "homepage": "https://github.com/neeilan/domain.io#readme"
+}
