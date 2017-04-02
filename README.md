@@ -2,7 +2,7 @@
 
 [Example app](https://github.com/neeilan/dio-example)
 
-## Installation
+# Installation
 Install using npm:
 ```
 npm install domain.io
@@ -12,8 +12,10 @@ Include in your app by passing in the ```io``` object available in vanilla Node.
 var dio = require('domain.io')(io);
 ```
 
-## API
+# API
 The root object returned by  ``require('domain.io')(io)`` consists of two methods:
+
+## Creating and deleting domains
 
 #### domain(String name) : Domain
 Creates and returns a new domain with given name. If such a domain already exists, it returns the instance.
@@ -24,7 +26,7 @@ Deletes the domain with the given name, if it exists.
 The returned Domain objects have the following methods:
 
 
-### Adding and removing
+## Adding and removing sockets
 
 #### add(string id, Socket s)
 Adds the provided Socket object to this domain, and makes it addressable via id. Note that **multiple sockets** - for instance, connections from all devices belonging to a particular user - can be added with the same id.
@@ -36,7 +38,7 @@ Removes the provided Socket object from this domain.
 Removes the socket(s) with provided id from this domain.
 
 
-### Sending messages
+## Sending messages
 
 #### broadcast(string eventName, object data)
 Emits provided event and data once to each socket in this domain.
@@ -63,7 +65,7 @@ Emits provided event and data once to each socket that is in this domain but who
 Emits provided event and data once to socket(s) with **unique** ids across this domain and otherDomain.
 
 
-## Working with multiple modules
+# Working with multiple modules
 Working with Socket.io in an application with several modules can painful.
 Domain.io maintains singleton instances of each domain, and domain(name) function returns the appropriate object if it already exists.
 This is less error-prone than passing around Socket.io within app.locals.
@@ -73,7 +75,7 @@ To access Users from a different file, you can simply use. Access to the io obje
 var Users = require('domain.io)().domain('Users');
 ``` 
 
-## Use cases
+# Use cases
 A good analogy for how domains relate to socket connections is how ORMs relate to databases. Your ORM model and a DIO domain working together can eliminate most context-switching between business logic and database/ws logic.
 
 Suppose User 1 adds a new photo to the 'Sports' topic. We want to send a notification to:
