@@ -22,7 +22,10 @@ Creates and returns a new domain with given name. If such a domain already exist
 Deletes the domain with the given name, if it exists.
 
 The returned Domain objects have the following methods:
+
+
 ### Adding and removing
+
 #### add(string id, Socket s)
 Adds the provided Socket object to this domain, and makes it addressable via id. Note that **multiple sockets** - for instance, connections from all devices belonging to a particular user - can be added with the same id.
 
@@ -32,7 +35,9 @@ Removes the provided Socket object from this domain.
 #### remove(string id)
 Removes the socket(s) with provided id from this domain.
 
+
 ### Sending messages
+
 #### broadcast(string eventName, object data)
 Emits provided event and data once to each socket in this domain.
 
@@ -56,6 +61,7 @@ Emits provided event and data once to each socket that is in this domain but who
 
 #### emitToUnion(Domain otherDomain, string eventName, object data)
 Emits provided event and data once to socket(s) with **unique** ids across this domain and otherDomain.
+
 
 ## Working with multiple modules
 Working with Socket.io in an application with several modules can painful.
