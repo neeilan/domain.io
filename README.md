@@ -105,5 +105,5 @@ Users.emit(userId, 'greeting', 'Hello there, ' + firstName);
 Or to all interested users:
 ```
 var followers = Followers(userId);
-followers.emit(firstName + 'just signed in');
+followers.emit('followedUserSignIn', firstName + 'just signed in');
 ```
