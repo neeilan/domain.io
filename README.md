@@ -72,7 +72,7 @@ This is less error-prone than passing around Socket.io within app.locals.
 
 To access Users from a different file, you can simply use. Access to the io object is only required to create a new domain.
 ```
-var Users = require('domain.io)().domain('Users');
+var Users = require('domain.io')().domain('Users');
 ``` 
 
 # Use cases
