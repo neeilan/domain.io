@@ -169,9 +169,9 @@ function _createDomain(io, domainName) {
      */
     function emitToIntersection(other, eventName, data) {
         var otherDomainIds = [];
-        if (other.hasOwnProperty(_getIds())){
+        if (other.hasOwnProperty('_getIds')) {
             otherDomainIds = other._getIds();
-        } else if (Array.isArray(other)){
+        } else if (Array.isArray(other)) {
             otherDomainIds = other;
         }
         var idSet = {};
