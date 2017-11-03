@@ -8,7 +8,7 @@ Install using npm:
 npm install domain.io
 ```
 Include in your app by passing in the ```io``` object available in vanilla Node.js as well as Express.
-```
+```javascript
 var dio = require('domain.io')(io);
 ```
 
@@ -71,7 +71,7 @@ Domain.io maintains singleton instances of each domain, and domain(name) functio
 This is less error-prone than passing around Socket.io within app.locals.
 
 To access Users from a different file, you can simply use. Access to the io object is only required to create a new domain.
-```
+```javascript
 var Users = require('domain.io')().domain('Users');
 ``` 
 
@@ -88,22 +88,27 @@ FollowersOf(user1Id).emitToUnion(Sports, 'photoUploadNotification', data)
 ```
 
 On Twitter, a user gets notified if someone they follow replies to a tweet by someone else they follow. A situation like that is solvable by ```emitToIntersection```:
-```
-FollowersOf(user1Id).emitToIntersection(FollowersOf(user2id), 'replyNotification', data)
+```javascript
+FollowersOf(user1Id)
+.emitToIntersection(
+  FollowersOf(user2id),
+  'replyNotification',
+  data
+ );
 ```
 
 Data can be sent to all Users:
-```
+```javascript
 topics.sports.broadcast('msg', 'Hi sports fans!');
 ```
 To specific users:
-```
+```javascript
 var firstName = getUserFirstName(userId);
 Users.emit(userId, 'greeting', 'Hello there, ' + firstName);
 ```
 
 Or to all interested users:
-```
+```javascript
 var followers = Followers(userId);
 followers.emit('followedUserSignIn', firstName + 'just signed in');
 ```
