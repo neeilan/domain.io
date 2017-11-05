@@ -4,6 +4,10 @@
 
 # Installation
 Install using npm:
+
+[![NPM](https://nodei.co/npm/domain.io.png)](https://npmjs.org/package/domain.io)
+
+
 ```
 npm install domain.io
 ```
@@ -15,15 +19,13 @@ var dio = require('domain.io')(io);
 # API
 The root object returned by  ``require('domain.io')(io)`` consists of two methods:
 
-## Creating and deleting domains
-
-#### domain(String name) : Domain
+#### 1. domain(String name) : Domain
 Creates and returns a new domain with given name. If such a domain already exists, it returns the instance.
 
-#### deleteDomain(String name)
+#### 2. deleteDomain(String name)
 Deletes the domain with the given name, if it exists.
 
-The returned Domain objects have the following methods:
+The `Domain` objects returned by (1) have the following methods:
 
 
 ## Adding and removing sockets
