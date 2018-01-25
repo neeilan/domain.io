@@ -72,7 +72,7 @@ Working with Socket.io in an application with several modules can painful.
 Domain.io maintains singleton instances of each domain, and domain(name) function returns the appropriate object if it already exists.
 This is less error-prone than passing around Socket.io within app.locals.
 
-To access Users from a different file, you can simply use. Access to the io object is only required to create a new domain.
+Access to the `io` object is only required to create a new domain. To access `Users` from a different file, you can simply do: 
 ```javascript
 var Users = require('domain.io')().domain('Users');
 ``` 
