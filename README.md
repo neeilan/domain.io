@@ -5,9 +5,6 @@
 # Installation
 Install using npm:
 
-[![NPM](https://nodei.co/npm/domain.io.png)](https://npmjs.org/package/domain.io)
-
-
 ```
 npm install domain.io
 ```
